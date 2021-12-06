@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Forms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Q1 total</th>
+      <th>Q2 total</th>
+      <th>Q3 total</th>
+      <th>Q4 total</th>
+      <th>Q5 total</th>
+      <th>Total points</th>
+      <th>Git link</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @forms.each do |form| %>
+      <tr>
+        <td><%= form.user_id %></td>
+        <td><%= form.q1_total %></td>
+        <td><%= form.q2_total %></td>
+        <td><%= form.q3_total %></td>
+        <td><%= form.q4_total %></td>
+        <td><%= form.q5_total %></td>
+        <td><%= form.total_points %></td>
+        <td><%= form.git_link %></td>
+        <td><%= link_to 'Show', form %></td>
+        <td><%= link_to 'Edit', edit_form_path(form) %></td>
+        <td><%= link_to 'Destroy', form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Form', new_form_path %>
+
+<br />
+
+<%#= react_component 'TestFunction' %>
+
+<br />
+
+<%= react_component 'RQuestion' %>

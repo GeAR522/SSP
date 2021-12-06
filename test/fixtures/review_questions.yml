@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  forms: one
+  coding-for-coverage: false
+  punctual-programmer: false
+  sloc-gold: false
+  sloc-silver: false
+  sloc-bronze: false
+  crikey: false
+  law-abiding-citizen: false
+
+two:
+  forms: two
+  coding-for-coverage: false
+  punctual-programmer: false
+  sloc-gold: false
+  sloc-silver: false
+  sloc-bronze: false
+  crikey: false
+  law-abiding-citizen: false

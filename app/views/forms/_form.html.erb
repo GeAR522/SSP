@@ -1,0 +1,60 @@
+<%= form_with(model: @form, local: true) do |f| %>
+  <%# if f.errors.any? %>
+<!--    <div id="error_explanation">-->
+<!--      <h2><%#= pluralize(f.errors.count, "error") %> prohibited this f from being saved:</h2>-->
+
+<!--      <ul>-->
+        <%# f.errors.full_messages.each do |message| %>
+<!--          <li><%#= message %></li>-->
+        <%# end %>
+<!--      </ul>-->
+<!--    </div>-->
+  <%# end %>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%# total = @form.q1_total %>
+    <% t1 = 0 %>
+    <%= react_component 'RQuestion', {props: t1} %>>
+    <%= f.label :q1_total %>
+    <%= f.number_field :q1_total, value: t1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :q2_total %>
+    <%= f.number_field :q2_total %>
+  </div>
+
+  <div class="field">
+    <%= f.label :q3_total %>
+    <%= f.number_field :q3_total %>
+  </div>
+
+  <div class="field">
+    <%= f.label :q4_total %>
+    <%= f.number_field :q4_total %>
+  </div>
+
+  <div class="field">
+    <%= f.label :q5_total %>
+    <%= f.number_field :q5_total %>
+  </div>
+
+  <div class="field">
+    <%= f.label :total_points %>
+    <%= f.number_field :total_points %>
+  </div>
+
+  <div class="field">
+    <%= f.label :git_link %>
+    <%= f.text_field :git_link %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
