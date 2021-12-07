@@ -1,4 +1,6 @@
 class FormResource < ApplicationResource
+  self.adapter = Graphiti::Adapters::ActiveRecord
+
   attribute :q1_total, :integer
   attribute :q2_total, :integer
   attribute :q3_total, :integer
@@ -8,3 +10,5 @@ class FormResource < ApplicationResource
   attribute :git_link, :string
   attribute :created_at, :datetime, writable: false
 end
+
+FormResource.all.data
