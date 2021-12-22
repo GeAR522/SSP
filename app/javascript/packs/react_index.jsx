@@ -5,7 +5,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import TestFunction from 'TestFunction'
+// import TestFunction from 'TestFunction'
 
 // const Hello = props => (
 //   <div>Hello {props.name}!</div>
@@ -21,7 +21,8 @@ import TestFunction from 'TestFunction'
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <TestFunction />,
+      <>
+      </>,
     // document.body.appendChild(document.createElement('div')),
   )
 })

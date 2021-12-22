@@ -1,10 +1,12 @@
 class ApplicationController < ActionController::Base
-  include Graphiti::Rails
+  # include Graphiti::Rails
 
-  register_exception Graphiti::Errors::RecordNotFound,
-                     status: 404
+  # register_exception Graphiti::Errors::RecordNotFound,
+  #                    status: 404
+  #
+  # rescue_from Exception do |e|
+  #   handle_exception(e)
+  # end
 
-  rescue_from Exception do |e|
-    handle_exception(e)
-  end
+
 end

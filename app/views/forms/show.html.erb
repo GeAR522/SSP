@@ -1,44 +1,48 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @form.user_id %>
-</p>
+<!--<p>-->
+<!--  <strong>User:</strong>-->
+  <%#= @form.user_id %>
+<!--</p>-->
 
-<p>
-  <strong>Q1 total:</strong>
-  <%= @form.q1_total %>
-</p>
+<!--<p>-->
+<!--  <strong>Q1 total:</strong>-->
+  <%#= @form.q1_total %>
+<!--</p>-->
 
-<p>
-  <strong>Q2 total:</strong>
-  <%= @form.q2_total %>
-</p>
+<!--<p>-->
+<!--  <strong>Q2 total:</strong>-->
+  <%#= @form.q2_total %>
+<!--</p>-->
 
-<p>
-  <strong>Q3 total:</strong>
-  <%= @form.q3_total %>
-</p>
+<!--<p>-->
+<!--  <strong>Q3 total:</strong>-->
+  <%#= @form.q3_total %>
+<!--</p>-->
 
-<p>
-  <strong>Q4 total:</strong>
-  <%= @form.q4_total %>
-</p>
+<!--<p>-->
+<!--  <strong>Q4 total:</strong>-->
+  <%#= @form.q4_total %>
+<!--</p>-->
 
-<p>
-  <strong>Q5 total:</strong>
-  <%= @form.q5_total %>
-</p>
+<!--<p>-->
+<!--  <strong>Q5 total:</strong>-->
+  <%#= @form.q5_total %>
+<!--</p>-->
 
-<p>
-  <strong>Total points:</strong>
-  <%= @form.total_points %>
-</p>
+<!--<p>-->
+<!--  <strong>Total points:</strong>-->
+  <%#= @form.total_points %>
+<!--</p>-->
 
-<p>
-  <strong>Git link:</strong>
-  <%= @form.git_link %>
-</p>
+<!--<p>-->
+<!--  <strong>Git link:</strong>-->
+  <%#= @form.git_link %>
+<!--</p>-->
+
+<%= react_component 'forms/Show' %>
+
+
 
 <%= link_to 'Edit', edit_form_path(@form) %> |
 <%= link_to 'Back', forms_path %>

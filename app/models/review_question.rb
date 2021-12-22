@@ -1,3 +1,9 @@
 class ReviewQuestion < ApplicationRecord
-  belongs_to :forms
+  belongs_to :form
+
+  # def subtotal()
+  #   ReviewQuestion.count(:conditions => true)
+  # end
+
+
 end

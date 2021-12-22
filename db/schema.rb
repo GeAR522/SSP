@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_06_145555) do
+ActiveRecord::Schema.define(version: 2021_12_22_121148) do
 
   create_table "forms", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2021_12_06_145555) do
   end
 
   create_table "review_questions", force: :cascade do |t|
-    t.integer "forms_id", null: false
+    t.integer "form_id", null: false
     t.boolean "coding_for_coverage"
     t.boolean "punctual_programmer"
     t.boolean "sloc_gold"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2021_12_06_145555) do
     t.boolean "law_abiding_citizen"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["forms_id"], name: "index_review_questions_on_forms_id"
+    t.index ["form_id"], name: "index_review_questions_on_form_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -55,5 +55,5 @@ ActiveRecord::Schema.define(version: 2021_12_06_145555) do
   end
 
   add_foreign_key "forms", "users"
-  add_foreign_key "review_questions", "forms", column: "forms_id"
+  add_foreign_key "review_questions", "forms"
 end

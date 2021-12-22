@@ -17,11 +17,11 @@
   </div>
 
   <div class="field">
-    <%# total = @form.q1_total %>
-    <% t1 = 0 %>
-    <%= react_component 'RQuestion', {props: t1} %>>
+    <% total = @form.q1_total %>
+    <%# props = 0 %>
+    <%= react_component 'RQuestion' %>
     <%= f.label :q1_total %>
-    <%= f.number_field :q1_total, value: t1 %>
+    <%= f.number_field :q1_total, value: total %>
   </div>
 
   <div class="field">
@@ -54,7 +54,13 @@
     <%= f.text_field :git_link %>
   </div>
 
+  <div>
+    <%= f.number_field :user_id, value: current_user.id, type: :hidden %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
+
 <% end %>

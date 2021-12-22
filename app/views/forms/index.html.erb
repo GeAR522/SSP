@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>User</th>
       <th>Q1 total</th>
       <th>Q2 total</th>
@@ -20,6 +21,7 @@
   <tbody>
     <% @forms.each do |form| %>
       <tr>
+        <td><%= form.id %></td>
         <td><%= form.user_id %></td>
         <td><%= form.q1_total %></td>
         <td><%= form.q2_total %></td>
@@ -29,18 +31,50 @@
         <td><%= form.total_points %></td>
         <td><%= form.git_link %></td>
         <td><%= link_to 'Show', form %></td>
-        <td><%= link_to 'Edit', edit_form_path(form) %></td>
-        <td><%= link_to 'Destroy', form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user.present? && form.user_id === current_user.id %>
+          <td><%= link_to 'Edit', edit_form_path(form) %></td>
+          <td><%= link_to 'Destroy', form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= react_component 'Delete', props: form.id %></td>
+        <% else %>
+          <td></td>
+          <td></td>
+        <% end %>
       </tr>
+    <% end %>
+    <tr>
+      <td><h4>ReviewQuestion</h4></td>
+    </tr>
+    <tr>
+      <th>ID</th>
+      <th>Form ID</th>
+      <th>coding for coverage</th>
+    </tr>
+  <% @review_question.each do |reviewQuestion| %>
+    <tr>
+      <td><%= reviewQuestion.id %></td>
+      <td><%= reviewQuestion.form_id %></td>
+      <td><%= reviewQuestion.coding_for_coverage %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
 
+<% if current_user.present? %>
+  <%= react_component 'CheckUserID', props: current_user %>
+<% end %>
 <br>
 
 <%= link_to 'New Form', new_form_path %>
 
 <br />
+
+<%= link_to 'Edit Profile', edit_user_registration_path %>
+
+<% if user_signed_in? %>
+  <%= link_to 'Sign Out', destroy_user_session_path, method: 'delete' %>
+<% else %>
+  <%= link_to 'Sign In', new_user_session_path, method: 'get' %>
+<% end %>
 
 <%#= react_component 'TestFunction' %>
 
