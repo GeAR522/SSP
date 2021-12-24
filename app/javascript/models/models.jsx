@@ -56,17 +56,18 @@ export const Form = ApplicationRecord.extend ({
 export const ReviewQuestion = ApplicationRecord.extend ({
     static: { jsonapiType: "review_questions"},
 
-     formId: attr(),
-     codingForCoverage: attr(),
-     punctualProgrammer: attr(),
-     slocGold: attr(),
-     slocSilver: attr(),
-     slocBronze: attr(),
-     crikey: attr(),
-     lawAbidingCitizen: attr(),
-     createdAt: attr({persist: false}),
-     updatedAt: attr({persist: false}),
+    attrs: {
+      formId: attr(),
+      codingForCoverage: attr(),
+      punctualProgrammer: attr(),
+      slocGold: attr(),
+      slocSilver: attr(),
+      slocBronze: attr(),
+      crikey: attr(),
+      lawAbidingCitizen: attr(),
+      createdAt: attr({persist: false}),
+      updatedAt: attr({persist: false}),
 
-    form: belongsTo(),
-
+      form: belongsTo(),
+    }
 })

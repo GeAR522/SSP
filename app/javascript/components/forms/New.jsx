@@ -4,6 +4,7 @@ import { Form as SSPForm, ReviewQuestion } from "../../models/models"
 import RQuestion from "../RQuestion";
 import CodingForCoverage from "../CodingForCoverage";
 import useCodingForCoverage from "../CodingForCoverage";
+import { visit } from 'turbolinks';
 
 export default function New() {
 
@@ -53,7 +54,10 @@ export default function New() {
     console.log(form)
     console.log(form.reviewQuestion)
     form.save({with: "reviewQuestion" }).then((success) => {
-      console.log(success)});
+      if (success) {
+        visit('/forms')
+      }
+    });
 
     // reviewQuestion.save().then((success2) => {
     //   console.log(success2)})

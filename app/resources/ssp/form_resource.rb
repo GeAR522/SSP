@@ -13,7 +13,7 @@ module Ssp
     attribute :git_link, :string, default: ''
     attribute :created_at, :datetime, writable: false
 
-    belongs_to :user
+    # belongs_to :user
 
     has_one :review_question, dependant: :destroy, resource: ReviewQuestionResource do
       params do |hash|

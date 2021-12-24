@@ -22,7 +22,14 @@
     <% @forms.each do |form| %>
       <tr>
         <td><%= form.id %></td>
-        <td><%= form.user_id %></td>
+        <td><%= case form.user_id
+              when 1
+                'Dom Samphier'
+              when 2
+                 'Tom Luce'
+              else
+                'unknown'
+            end %></td>
         <td><%= form.q1_total %></td>
         <td><%= form.q2_total %></td>
         <td><%= form.q3_total %></td>

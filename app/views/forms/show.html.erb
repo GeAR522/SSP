@@ -40,7 +40,16 @@
   <%#= @form.git_link %>
 <!--</p>-->
 
-<%= react_component 'forms/Show' %>
+<% case Form.user_id
+    when 1
+      used = 'Dom Samphier'
+    when 2
+      used = 'Tom Luce'
+    else
+      used = 'unknown'
+    end %>
+
+<%= react_component 'forms/Show', id: @form.id, user: used  %>
 
 
 

@@ -11,8 +11,9 @@ module Ssp
   def show
     # form = FormResource.find(params)
     # respond_with(form)
-    #
-    # render jsonapi: @forms.find(params)
+
+
+    render jsonapi: FormResource.find(params)
   end
 
   def create
@@ -30,7 +31,6 @@ module Ssp
     else
       render jsonapi_errors: form
     end
-    render '/forms'
   end
 
   def update

@@ -20,6 +20,15 @@ class FormsController < ApplicationController
     @forms = Form.all
     @review_question = ReviewQuestion.all
 
+    # case Form.user_id
+    # when 1
+    #   @userName = "Dom s"
+    # when 2
+    #   @userName = "Tommy L"
+    # else
+    #   @userName = "unknown"
+    # end
+
     # render jsonapi: forms
     #
     # respond_to do |format|
@@ -42,7 +51,8 @@ class FormsController < ApplicationController
     #   format.jsonapi { render(jsonapi: forms) }
     #   format.xml { render(xml: forms) }
     # end
-
+    puts "here"
+    puts params
     @form = Form.find(params['id'])
 
   end
@@ -87,6 +97,7 @@ class FormsController < ApplicationController
       #   format.json { render json: @review_question.errors, status: :unprocessable_entity }
       # end
     end
+    render '/forms'
   end
 
   # PATCH/PUT /forms/1 or /forms/1.json
